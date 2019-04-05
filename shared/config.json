@@ -1,0 +1,18 @@
+{
+    "BASIC_NAME":"Hotel",
+    "AUTHENTICATION_HEADER_MSG_OK":"La petición contiene la cabeera de autenticación",
+    "AUTHENTICATION_HEADER_MSG_ERROR":"La petición no contiene la cabecera de autenticación",
+    "AUTHENTICATION_TOKEN_OK":"Token válido",
+    "AUTHENTICATION_TOKEN_ERROR":"Token no válido",
+    "SUCCESS_MSG":"Everything is ok",
+    "ERROR_MSG":"Something fails",
+    "ERROR_DATA":"Data Incorrect",
+    "DATA_GET_MSG_OK":"Los datos fueron cargados correctamente",
+    "DATA_GET_MSG_ERROR":"Los datos no fueron cargados correctamente",
+    "DATA_SAVE_MSG_OK":"Los datos fueron guardados correctamente",
+    "DATA_SAVE_MSG_ERROR":"Los datos no fueron guardados correctamente",
+    "DATA_UPDATE_OK":"Los datos fueron actualizados correctamente",
+    "DATA_UPDATE_ERROR":"Los datos no fueron actualizados",
+    "DATA_DELETE_OK":"El dato fue eliminado correctamente",
+    "DATA_DELETE_ERROR":"El dato no pudo ser eliminado"
+}
