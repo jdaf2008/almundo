@@ -1,17 +1,9 @@
-# Backend Almundo test
+# Almundo test
 
-## Development 
+## Información General
 
-The development of Backend was made by the standard arquitecture: MEAN, and based on MVC style or programming Pattern. So the tecnology used are:
+El repositorio contiene dos carpetas:
 
-* MongoDB and Mongoose
-* Node JS
-* Express JS
+almundo_backend
+almundo_frontend
 
-## Model
-
-The simulator consider three  entities:
-
-* CLient
-* System
-* Configuration
