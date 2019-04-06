@@ -27,7 +27,7 @@ app.use((req, res, next)=>{
 
 // Base Routes
 
-app.use('/almundo/api',hotel_routes);
+app.use('/api/almundo',hotel_routes);
 
 app.get('/testing',(req,res) => {
     res.status(200).send({message: "This is the testing method"});

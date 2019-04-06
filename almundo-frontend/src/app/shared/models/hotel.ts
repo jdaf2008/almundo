@@ -7,5 +7,4 @@ export class Hotel {
     images: string;
     amenities: Array<string>;
     
-
 }

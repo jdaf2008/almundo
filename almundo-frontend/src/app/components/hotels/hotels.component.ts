@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "hotels",
@@ -6,11 +6,14 @@ import { Component } from "@angular/core";
     templateUrl: "./hotels.component.html"
 })
 
-export class HotelsComponent {
+export class HotelsComponent implements OnInit {
 
     title: string;
 
     constructor(){
         this.title = "almundo.com"
+    }
+    ngOnInit(){
+        console.log("NgOnInit in hotels component");
     }
 }

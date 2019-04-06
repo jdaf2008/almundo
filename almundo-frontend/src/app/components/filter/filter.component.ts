@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "filter",
@@ -6,11 +6,24 @@ import { Component } from "@angular/core";
     templateUrl: "./filter.component.html"
 })
 
-export class FilterComponent {
+export class FilterComponent implements OnInit{
 
     title: string;
+    nameFilterTitle: string;
+    startsFilterTitle: string;
+
+    //Attribute to look for
+    nameHotel: string;
 
     constructor(){
-        this.title = "almundo.com"
+        this.title = "Filtros"
+        this.nameFilterTitle = "Nombre del Hotel"
+        this.startsFilterTitle = "Estrellas"    
     }
+
+    ngOnInit(){
+        console.log("NgOnInit in hotels component");
+    }
+
+
 }
