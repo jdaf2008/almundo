@@ -26,7 +26,9 @@ function saveHotels(req,res){
            hotel.image = params.image;
            hotel.amenities = params.amenities;
 
-   
+
+
+
            Controller.handleResponse('save', {name:hotel.name}, null, hotel, null, Hotel, Config.DATA_SAVE_MSG_ERROR, Config.ERROR_DATA, Config.DATA_SAVE_MSG_OK, (code, payload)=>{
                res.status(code).send(payload);
            });
@@ -37,6 +39,8 @@ function saveHotels(req,res){
 }
 
 function getHotels(req, res){
+
+    console.log("what happend");
 
     Controller.handleResponse("get", null, null, null, null, Hotel, Config.DATA_GET_MSG_ERROR, null, Config.DATA_GET_MSG_OK, (code, payload)=>{
         res.status(code).send(payload);

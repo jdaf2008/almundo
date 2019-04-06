@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var ProductSchema = Schema({
+var HotelSchema = Schema({
     name: String,
     starts: Number,
     price: Number ,

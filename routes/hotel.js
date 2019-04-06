@@ -2,7 +2,6 @@
 
 var express = require('express');
 var HotelController = require('../controllers/hotel');
-var mdAuthPublic = require('../middlewares/authPublic');
 
 var api = express.Router();
 

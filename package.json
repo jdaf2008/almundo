@@ -5,7 +5,7 @@
   "author": "Juan Arias <jdafcorp2008@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

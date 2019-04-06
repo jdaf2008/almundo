@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // Routes
-var hotels_routes = require('./routes/hotel');
+var hotel_routes = require('./routes/hotel');
 
 
 // Middlewares of body-parser
