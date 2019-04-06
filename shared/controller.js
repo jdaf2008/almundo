@@ -69,6 +69,10 @@ function handleResponse(method, condition, items, item, itemId, Model, errorBasi
                 basicResponse(err, parameterDeleted, errorBasicMsg, successBasicMsg, cbResponse);
             });
             break;
+        case "saveMany":
+        
+            Model.
+            break;
         default:
     }
 

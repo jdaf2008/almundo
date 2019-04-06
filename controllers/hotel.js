@@ -20,6 +20,7 @@ function saveHotels(req,res){
        // Assign value to hotel
        if(params.code){
 
+           hotel.id = params.id;
            hotel.name = params.name;
            hotel.price = params.price;
            hotel.starts = params.starts;
@@ -29,7 +30,7 @@ function saveHotels(req,res){
 
 
 
-           Controller.handleResponse('save', {name:hotel.name}, null, hotel, null, Hotel, Config.DATA_SAVE_MSG_ERROR, Config.ERROR_DATA, Config.DATA_SAVE_MSG_OK, (code, payload)=>{
+           Controller.handleResponse('save', {id:hotel.id}, null, hotel, null, Hotel, Config.DATA_SAVE_MSG_ERROR, Config.ERROR_DATA, Config.DATA_SAVE_MSG_OK, (code, payload)=>{
                res.status(code).send(payload);
            });
    
