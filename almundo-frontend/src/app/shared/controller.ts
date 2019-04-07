@@ -3,6 +3,7 @@ import { Injectable, NgZone, ɵConsole } from "@angular/core";
 import { Observable as RxObservable,  SubscriptionLike as ISubscription } from "rxjs";
 import { Config } from "./config";
 import { PortalService } from "./services/portal.service";
+import { Hotel } from './models/hotel';
 
 
 
@@ -11,7 +12,6 @@ import { PortalService } from "./services/portal.service";
 export class Controller {
     serveUrl: string;
     data: string;
-    isThereInternet: boolean;
 
     private subscription: ISubscription;
 
@@ -22,7 +22,7 @@ export class Controller {
     }
 
     // tslint:disable-next-line:max-line-length
-    generalService(servicesName: string, item: string, cbService, cbServiceError) {
+    generalService(servicesName: string, hotelCondition: string, cbService, cbServiceError) {
 
                 switch (servicesName) {
 
@@ -30,14 +30,7 @@ export class Controller {
                         this.serveUrl = Config.API_URL_BASE + Config.API_URL_PARAMETER;
                         console.info("contr_generalservice Service get parameters");
                         // tslint:disable-next-line:max-line-length
-                        this.handleHttpResponse(null, this.serveUrl, null, cbService, cbServiceError, Config.NAME_SERVICE_GET_PARAMETERS, Config.METHOD_NAME_GET);
-                        break;
-
-                    case Config.NAME_SERVICE_GET_PARAMETER:
-                        this.serveUrl = Config.API_URL_BASE + Config.API_URL_PARAMETER;
-                        console.info("contr_generalservice Service get parameter");
-                        // tslint:disable-next-line:max-line-length
-                        this.handleHttpResponse(null, this.serveUrl, item, cbService, cbServiceError, Config.NAME_SERVICE_GET_PARAMETERS, Config.METHOD_NAME_POST);
+                        this.handleHttpResponse(null, this.serveUrl, null, cbService, cbServiceError, Config.NAME_SERVICE_GET_PARAMETERS, Config.METHOD_NAME_GET,hotelCondition);
                         break;
                     default:
                         console.info("contr_generalservice Invalid option");
@@ -46,8 +39,8 @@ export class Controller {
 
     // ------------------------------------------ General Methods -----------------------------------------------
 
-    handleHttpResponse(token, serveUrl, data, cbService, cbServiceError, serviceName, method) {
-        this.subscription = this.portalService.httpGeneralRequest(token, serveUrl, data, method)
+    handleHttpResponse(token, serveUrl, data, cbService, cbServiceError, serviceName, method, condition) {
+        this.subscription = this.portalService.httpGeneralRequest(token, serveUrl, data, method, condition)
         .subscribe((result) => {
             // console.info("contr_generalservice_handlehttp statuscode_ok in " + serviceName + ": " + result.message);
             cbService(result);

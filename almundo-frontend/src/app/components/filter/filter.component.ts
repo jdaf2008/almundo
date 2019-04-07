@@ -19,6 +19,7 @@ export class FilterComponent implements OnInit{
 
     //Attribute to look for
     nameHotel: string;
+    starsHotel: string;
 
     //View Objetcs
 
@@ -38,17 +39,17 @@ export class FilterComponent implements OnInit{
     ngOnInit(){
 
         console.log("OnInit filter Component");
-        this.getData();
+        this.getData(null);
 
     }
       // ******************************* General Methods ************************************
 
     // Function, Get data from API services and set local variables
-    getData() {
-        this.controller.generalService(Config.NAME_SERVICE_GET_PARAMETERS, null, (res) => {
+    getData(condition) {
+        this.controller.generalService(Config.NAME_SERVICE_GET_PARAMETERS, condition, (res) => {
             console.log("get data correct");
             alert(Config.GENERAL_OK_MESSAGE);
-
+            this.clearData();
             res.items.forEach((item)=>{
                 this.hotelList.push(new Hotel(
                     item.id,
@@ -69,30 +70,23 @@ export class FilterComponent implements OnInit{
     }
 
 
+    lookFor(){
 
-    getDataByName() {
-        this.controller.generalService(Config.NAME_SERVICE_GET_PARAMETER, null, (res) => {
-            console.log("get data correct");
-            alert(Config.GENERAL_OK_MESSAGE);
+        console.log("Click on look for");
+        this.getData(this.createCondition());
 
-            res.items.forEach((item)=>{
-                this.hotelList.push(new Hotel(
-                    item.id,
-                    item.name,
-                    item.starts,
-                    item.price,
-                    item.images,
-                    item.amenities
-                ));
-            });
-
-            console.log("get data " + JSON.stringify(this.hotelList));
-
-        }, (error) => {
-            alert(Config.GENERAL_ERROR_MESSAGE);
-            
-        });
     }
+
+    clearData(){
+
+        this.hotelList = [];
+    }
+
+    createCondition(){
+       var condition = { name:this.nameHotel};
+       return condition;
+    }
+
 
 
 }
