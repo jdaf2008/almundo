@@ -22,7 +22,7 @@ export class Controller {
     }
 
     // tslint:disable-next-line:max-line-length
-    generalService(servicesName: string, system: string, cbService, cbServiceError) {
+    generalService(servicesName: string, item: string, cbService, cbServiceError) {
 
                 switch (servicesName) {
 
@@ -31,6 +31,13 @@ export class Controller {
                         console.info("contr_generalservice Service get parameters");
                         // tslint:disable-next-line:max-line-length
                         this.handleHttpResponse(null, this.serveUrl, null, cbService, cbServiceError, Config.NAME_SERVICE_GET_PARAMETERS, Config.METHOD_NAME_GET);
+                        break;
+
+                    case Config.NAME_SERVICE_GET_PARAMETER:
+                        this.serveUrl = Config.API_URL_BASE + Config.API_URL_PARAMETER;
+                        console.info("contr_generalservice Service get parameter");
+                        // tslint:disable-next-line:max-line-length
+                        this.handleHttpResponse(null, this.serveUrl, item, cbService, cbServiceError, Config.NAME_SERVICE_GET_PARAMETERS, Config.METHOD_NAME_POST);
                         break;
                     default:
                         console.info("contr_generalservice Invalid option");

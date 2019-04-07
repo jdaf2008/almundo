@@ -18,7 +18,7 @@ function basicResponse(err, items, errorMsg, successMsg, cbResponse){
         } else {
             cbResponse(200, {
                 items,
-                //message: successMsg
+                message: successMsg
             });
         }
     }
@@ -53,10 +53,19 @@ function handleResponse(method, condition, items, item, itemId, Model, errorBasi
             });
             break;
         case "get":
-            Model.find({}).exec((err, items) => {
-                basicResponse(err, items, errorBasicMsg, successBasicMsg, cbResponse);
-            });
-            
+                // Model.find({}).exec((err, items) => {
+                //     basicResponse(err, items, errorBasicMsg, successBasicMsg, cbResponse);
+                // });
+                console.log("condition " + JSON.stringify(condition));
+
+                Model.find(condition, (err, issetItem)=>{
+                    basicResponse(err, issetItem, errorBasicMsg, successBasicMsg, cbResponse);
+                });
+            break;
+        case "filter":
+                Model.find(condition, (err, issetItem)=>{
+                    basicResponse(err, issetItem, errorBasicMsg, successBasicMsg, cbResponse);
+                });
             break;
         case "update":
             Model.findByIdAndUpdate(itemId, items, {new:true}, (err, parameterUpdated)=>{

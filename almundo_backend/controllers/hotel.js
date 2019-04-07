@@ -7,20 +7,23 @@ var Controller = require('../shared/controller');
 var Config = require("../shared/config.json");
 
 
+
 function saveHotels(req,res){
+    console.log("Save hotels");
+
        // Create hotel object
        var hotel = new Hotel();
 
        // get requested parameters
        var params =  req.body;
 
-
+       name
        console.log(params);
    
        // Assign value to hotel
-       if(params.code){
+       if(params.name){
 
-           hotel.id = params.id;
+           hotel.id = params.id;name
            hotel.name = params.name;
            hotel.price = params.price;
            hotel.starts = params.starts;
@@ -41,13 +44,17 @@ function saveHotels(req,res){
 
 function getHotels(req, res){
 
-    console.log("what happend");
 
-    Controller.handleResponse("get", null, null, null, null, Hotel, Config.DATA_GET_MSG_ERROR, null, Config.DATA_GET_MSG_OK, (code, payload)=>{
-        res.status(code).send(payload);
-    });
+        console.log("get hotel");
 
+        req.query.stars ? req.query.stars = parseInt(req.query.stars) : null;
+
+        Controller.handleResponse("get", req.query, null, null, null, Hotel, Config.DATA_GET_MSG_ERROR, null, Config.DATA_GET_MSG_OK, (code, payload)=>{
+            res.status(code).send(payload);
+        });
+    
 }
+
 
 function updateHotel(req,res){
     var parameterId = req.params.id
@@ -67,6 +74,8 @@ function deleteHotel(req,res){
     //     res.status(code).send(payload);
     // });
 }
+
+
 
 module.exports = {
     getHotels,

@@ -10,6 +10,7 @@ export class Config {
 
     // Services Name
     static NAME_SERVICE_GET_PARAMETERS =  "getHotels";
+    static NAME_SERVICE_GET_PARAMETER =  "getHotel";
     
     // Services Options
     static SERVICES_TIMEOUT = 5000;

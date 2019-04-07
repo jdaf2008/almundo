@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { Hotel } from 'src/app/shared/models/hotel';
 
 @Component({
     selector: "hotels",
@@ -9,6 +10,7 @@ import { Component, OnInit } from "@angular/core";
 export class HotelsComponent implements OnInit {
 
     title: string;
+    @Input() hotels: Hotel;
 
     constructor(){
         this.title = "almundo.com"
