@@ -82,7 +82,13 @@ export class FilterComponent implements OnInit{
     }
 
     createCondition(){
-       var condition = { name:this.nameHotel, stars:this.starsHotel};
+       var condition = {name:null,stars:null};
+
+       console.log("Stas Hotel " + this.starsHotel);
+
+       this.nameHotel == "" || this.nameHotel == undefined ? delete condition.name : condition.name = this.nameHotel;
+       this.starsHotel == undefined || isNaN(this.starsHotel) ? delete condition.stars : condition.stars = this.starsHotel;
+
        return condition;
     }
 

@@ -17,7 +17,6 @@ function saveHotels(req,res){
        // get requested parameters
        var params =  req.body;
 
-       name
        console.log(params);
    
        // Assign value to hotel
