@@ -19,7 +19,7 @@ export class FilterComponent implements OnInit{
 
     //Attribute to look for
     nameHotel: string;
-    starsHotel: string;
+    starsHotel: number;
 
     //View Objetcs
 
@@ -44,7 +44,6 @@ export class FilterComponent implements OnInit{
     }
       // ******************************* General Methods ************************************
 
-    // Function, Get data from API services and set local variables
     getData(condition) {
         this.controller.generalService(Config.NAME_SERVICE_GET_PARAMETERS, condition, (res) => {
             console.log("get data correct");
@@ -83,7 +82,7 @@ export class FilterComponent implements OnInit{
     }
 
     createCondition(){
-       var condition = { name:this.nameHotel};
+       var condition = { name:this.nameHotel, stars:this.starsHotel};
        return condition;
     }
 
