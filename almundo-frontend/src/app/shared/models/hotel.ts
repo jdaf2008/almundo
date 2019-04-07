@@ -1,10 +1,10 @@
 export class Hotel {
 
-    id: string;
-    name: string;
-    starts: number;
-    price: number;
-    images: string;
-    amenities: Array<string>;
-    
+    constructor(
+        public id: string,
+        public name: string,
+        public starts: number,
+        public price: number,
+        public images: string
+    ) { }
 }
