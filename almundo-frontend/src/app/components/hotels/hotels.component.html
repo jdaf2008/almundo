@@ -26,7 +26,20 @@
                           <div *ngSwitchCase=5> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"></div>
                         </div>
                         <br>
-                        {{hotel.amenities}}
+                        <div *ngFor="let amenitie of hotel.amenities">
+                          <div [ngSwitch]="amenitie">
+                            <div *ngSwitchCase="'coffe-maker'"> <img style="height: 15px;" src="../../../assets/icons/amenities/coffe-maker.svg"></div>
+                            <div *ngSwitchCase="'safety-box'"> <img style="height: 15px;" src="../../../assets/icons/amenities/safety-box.svg"></div>
+                            <div *ngSwitchCase="'bathrobes'"> <img style="height: 15px;" src="../../../assets/icons/amenities/bathrobes.svg"></div>
+                            <div *ngSwitchCase="'restaurant'"> <img style="height: 15px;" src="../../../assets/icons/amenities/restaurant.svg"></div>
+                            <div *ngSwitchCase="'garden'"> <img style="height: 15px;" src="../../../assets/icons/amenities/garden.svg"></div>
+                            <div *ngSwitchCase="'children-club'"> <img style="height: 15px;" src="../../../assets/icons/amenities/children-club.svg"></div>
+                            <div *ngSwitchCase="'business-center'"> <img style="height: 15px;" src="../../../assets/icons/amenities/business-center.svg"></div>
+                            <div *ngSwitchCase="'beach-pool-facilities'"> <img style="height: 15px;" src="../../../assets/icons/amenities/beach-pool-facilities.svg"></div>
+                            <div *ngSwitchCase="'kitchen-facilities'"> <img style="height: 15px;" src="../../../assets/icons/amenities/kitchen-facilities.svg"></div>
+                            <div *ngSwitchCase="'deep-soaking-bathtub'"> <img style="height: 15px;" src="../../../assets/icons/amenities/deep-soaking-bathtub.svg"></div>
+                          </div>
+                        </div>
                       </div>
                       <div fxFlex="21" style="margin-right:5px; text-align:left"  >  
                           <span style="color:gray">Precio por noche por habitación</span>  
