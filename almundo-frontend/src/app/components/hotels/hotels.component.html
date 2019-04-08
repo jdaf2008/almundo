@@ -16,16 +16,16 @@
                           <img  style="height: 100%;" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                       </div>
                       <div  fxFlex="50" style="margin-right:5px; text-align:left" >  
-                        {{hotel.name}}
+                          <span style="color:blue"><strong>{{hotel.name}}</strong></span>  
                         <br>
                         {{hotel.stars}}
                         <br>
                         {{hotel.amenities}}
                       </div>
                       <div fxFlex="21" style="margin-right:5px; text-align:left"  >  
-                          <span style="color:blue">Precio por noche por habitación</span>  
+                          <span style="color:gray">Precio por noche por habitación</span>  
                           <br>
-                          <span style="color:blue">ARS</span>  {{hotel.price | number}}
+                          <span style="color:#ff8000">ARS </span>  <span style="color:#ff8000"><strong>{{hotel.price | number}}</strong></span>
                           <br>
                           <button type="button" >Ver Hotel</button> 
 
