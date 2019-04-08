@@ -37,7 +37,18 @@ $ mkdir ~/data
 $ sudo docker run --name mongoALdb -d -p 27017:27017 -v ~/data:/data/db mongo
 ```
 
-C. Agregar Base de datos y collección
+C. Agregar Base de datos y colección, Para eso instalar un cliente de mongo-client y luego entrar a la base de datos y agregar la colection
+
+```sh
+$ sudo apt-get install mongodb-clients
+$ mongo localhost/almundo_backend
+> db.createCollection('hotels')
+> db.cities.insertMany([}])
+$ c^
+
+```
+
+#### La última línea de insertMany dentro debe ir el array JSON que contiene todos los objetos hotel
 
 2.  Backend. Instalar nodejs y npm 
 
