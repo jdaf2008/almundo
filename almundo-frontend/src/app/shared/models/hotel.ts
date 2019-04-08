@@ -5,7 +5,7 @@ export class Hotel {
         public name: string,
         public stars: number,
         public price: number,
-        public images: string,
+        public image: string,
         public amenities: Array<string>
     ) { }
 }

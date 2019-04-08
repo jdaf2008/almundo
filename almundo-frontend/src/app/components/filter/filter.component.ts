@@ -61,7 +61,7 @@ export class FilterComponent implements OnInit{
                     item.name,
                     item.stars,
                     item.price,
-                    item.images,
+                    item.image,
                     item.amenities
                 ));
             });
