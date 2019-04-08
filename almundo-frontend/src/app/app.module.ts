@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 //Material Design
-import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatCardModule, MatCheckboxModule, MatGridListModule } from '@angular/material'
+import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatCardModule, MatCheckboxModule, MatGridListModule, MatListModule } from '@angular/material'
 
 
 
@@ -36,13 +36,15 @@ import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatCardModule, MatCh
     MatCardModule,
     MatCheckboxModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule
   ],
   exports: [
     MatSidenavModule,
     MatToolbarModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

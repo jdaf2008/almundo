@@ -59,7 +59,7 @@ export class FilterComponent implements OnInit{
                 this.hotelList.push(new Hotel(
                     item.id,
                     item.name,
-                    item.starts,
+                    item.stars,
                     item.price,
                     item.images,
                     item.amenities
