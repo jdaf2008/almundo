@@ -18,7 +18,13 @@
                       <div  fxFlex="50" style="margin-right:5px; text-align:left" >  
                           <span style="color:blue"><strong>{{hotel.name}}</strong></span>  
                         <br>
-                        {{hotel.stars}}
+                        <div [ngSwitch]="hotel.stars">
+                          <div *ngSwitchCase=1> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"></div>
+                          <div *ngSwitchCase=2> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> </div>
+                          <div *ngSwitchCase=3> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"></div>
+                          <div *ngSwitchCase=4> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"></div>
+                          <div *ngSwitchCase=5> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"> <img style="height: 15px;" src="../../../assets/icons/filters/star.svg"></div>
+                        </div>
                         <br>
                         {{hotel.amenities}}
                       </div>
@@ -40,8 +46,7 @@
     </mat-list>
     
 
-      
-    
+
 
 
   <router-outlet></router-outlet>
