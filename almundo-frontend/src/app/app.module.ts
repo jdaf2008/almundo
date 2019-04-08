@@ -10,6 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { HotelsComponent } from './components/hotels/hotels.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+//Material Design
+import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatCardModule, MatCheckboxModule, MatGridListModule } from '@angular/material'
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +29,20 @@ import { FilterComponent } from './components/filter/filter.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatGridListModule,
+    FlexLayoutModule
+  ],
+  exports: [
+    MatSidenavModule,
+    MatToolbarModule,
+    MatCardModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

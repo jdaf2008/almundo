@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import { Config } from "../../shared/config";
 import { Controller } from "../../shared/controller";
 
@@ -8,7 +8,8 @@ import { Hotel } from "../../shared/models/hotel"
 @Component({
     selector: "filter",
     // moduleId: module.id,
-    templateUrl: "./filter.component.html"
+    templateUrl: "./filter.component.html",
+    styleUrls: ['./filter.component.css']
 })
 
 export class FilterComponent implements OnInit{
@@ -24,15 +25,19 @@ export class FilterComponent implements OnInit{
     //View Objetcs
 
     hotelList: Array<Hotel> = [];
+    stars: Array<boolean> = new Array(6);
+    starList: Array<number> = [];
 
-   
+    
     constructor(
         private controller: Controller,
     ){
         this.title = "Filtros";
         this.nameFilterTitle = "Nombre del Hotel";
         this.startsFilterTitle = "Estrellas";
-        this.title = "almundo.com";;
+        this.title = "almundo.com";
+        this.stars.fill(false);
+        this.stars[0]=true;
     }
 
 
@@ -40,8 +45,9 @@ export class FilterComponent implements OnInit{
 
         console.log("OnInit filter Component");
         this.getData(null);
-
+        
     }
+
       // ******************************* General Methods ************************************
 
     getData(condition) {
@@ -72,7 +78,8 @@ export class FilterComponent implements OnInit{
     lookFor(){
 
         console.log("Click on look for");
-        this.getData(this.createCondition());
+         this.checkStars();
+       this.getData(this.createCondition());
 
     }
 
@@ -87,9 +94,29 @@ export class FilterComponent implements OnInit{
        console.log("Stas Hotel " + this.starsHotel);
 
        this.nameHotel == "" || this.nameHotel == undefined ? delete condition.name : condition.name = this.nameHotel;
-       this.starsHotel == undefined || isNaN(this.starsHotel) ? delete condition.stars : condition.stars = this.starsHotel;
+       this.starList == undefined ||  this.starList.length == 0 ? delete condition.stars : condition.stars = this.starList;
 
        return condition;
+    }
+
+    checkStars() {
+
+        console.log("chech stars  ");
+
+        if (this.stars[0]) {
+            this.starList = [];
+
+        } else {
+            this.starList = [];
+            for (var i=1; i < this.stars.length; i++){
+                console.log("insede for");
+             this.stars[i] ? this.starList.push(i) : null
+            }
+        } 
+
+        console.log("  arrays 1 " + this.stars + " array 2 to send  " + this.starList);
+
+
     }
 
 
